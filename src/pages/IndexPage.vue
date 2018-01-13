@@ -50,7 +50,7 @@
                 <div class="columns is-vcentered">
                     <div class="column is-6 is-offset-1">
                             <img src="../assets/img/logo.svg" alt="Poop Matches" width="300px">
-                            <h2 class="subtitle is-4"><span>The best match for that</span> 💩</h2>
+                            <h2 class="subtitle is-4"><span>The best match for that poop.</span></h2>
                     </div>
                     <div class="column is-5">
                         <figure class="image poop-matches-image">
