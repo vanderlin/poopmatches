@@ -1,5 +1,6 @@
 <template>
 <div class="main">
+    
     <div class="modal" :class="{'is-active': showEmailModal}">
         <div class="modal-background" @click="() => { showEmailModal = false}"></div>
         <div class="modal-content">
@@ -23,24 +24,52 @@
     </div>
 
     <section class="hero main-hero is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">
+                            <!-- <img src="../images/bulma.png" alt="Logo"> -->
+                        </a>
+                    </div>
+                
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item">
+                                <span class="icon">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <div class="hero-body">
-            <div class="container">
-                <div class="columns is-multiline">
-                    <div class="column is-full matches-info has-text-centered">
-                        <h1 class="title">
-                            Poop Matches
-                        </h1>
-                        <h2 class="subtitle">
-                            The right match for that poop.
-                        </h2>
-                        <figure class="image match-images">
-                            <img src="../assets/img/matches.png" alt="">
-                            <p class="help-text">SOLD OUT</p>
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-6 is-offset-1">
+                            <img src="../assets/img/logo.svg" alt="Poop Matches" width="300px">
+                            <h2 class="subtitle is-4"><span>The best match for that</span> 💩</h2>
+                    </div>
+                    <div class="column is-5">
+                        <figure class="image poop-matches-image">
+                            <img src="../assets/img/matches.png" alt="Poop Matches">
                         </figure>
+                        <p class="has-text-centered">
+                            <button class="button is-medium is-outlined" @click.stop="() => { showEmailModal = true}">Order Now</button>
+                            <p class="help-text">SOLD OUT</p>
+                        </p>
                     </div>
-                    <div class="column is-full order-col">
-                        <button class="button is-large" @click.stop="() => { showEmailModal = true}">Order Now</button>
-                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul class="footer-text">
+                        <li><a href="">© 2018 poopmatches.com</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -89,9 +118,8 @@ export default {
 @import '../styles/variables';
 @import '~bulma/sass/utilities/mixins';
 .main-hero {
-    background-color: #EAEFEF;
+    background-color: #fff;
     .container {
-        height: 80vh;
     }
 }
 .matches-info {
@@ -114,7 +142,9 @@ export default {
     margin: 30px auto;
 }
 .help-text {
+    margin-top: 10px;
     color: red;
+    font-size: 12px;
 }
 .modal {
     .label {
@@ -125,5 +155,24 @@ export default {
         width: 120px;
         margin-top: 20px;
     }
+}
+.subtitle span {
+    font-style: italic;
+    font-size: 14px;
+}
+
+@-webkit-keyframes moveUp {
+    0% { }
+    100% { transform: scale(1); opacity: 1; }
+}
+.poop-matches-image {
+    max-width: 300px;
+    margin: 0 auto; 
+    opacity: 0;
+    transform: scale(0.7);
+    animation: moveUp .6s ease-in-out forwards;
+}
+.footer-text {
+    font-size: 12px;
 }
 </style>
